@@ -1,0 +1,27 @@
+---
+import Page from '../components/Page.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+
+const title = 'Tiny Rocket'
+const description = 'A tiny Astro starter'
+---
+
+<Page {title} {description}>
+
+    <SiteHeader />
+
+    <div class='flex justify-center'>
+        <div class='text-lg w-5/6 lg:w-3/4'>
+            <p class='my-6 font-semibold'>
+                {description}
+            </p>
+            <p class='my-6'>
+                Tiny Rocket can be used for a blog or a website that needs blog-like features. It is intended to be a starter, so it is minimally styled. You can push the design as far out as possible with <a href='https://tailwindcss.com/' class='underline underline-offset-2 decoration-dashed'>Tailwind CSS</a>.
+            </p>
+            <p class='my-6'>
+                Source is at <a href='https://github.com/slamethendry/tinyrocket' class='underline underline-offset-2 decoration-dashed'>GitHub</a>. MIT License.
+            </p>
+        </div>
+    </div>
+
+</Page>

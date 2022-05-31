@@ -1,0 +1,22 @@
+---
+import BlogHeader from '../components/BlogHeader.astro'
+import BlogPostContent from '../components/BlogPostContent.astro'
+import Page from '../components/Page.astro'
+
+const { content } = Astro.props
+const { title, description, publishDate, heroImage, alt } = content
+---
+
+<Page {title} {description}>
+    <BlogHeader />
+    <BlogPostContent {title} {heroImage} {publishDate} {alt}>
+        <div>
+            <p class='text-lg my-6'>
+                {description}
+            </p>
+        </div>
+        <div class="prose text-lg">
+            <slot />
+        </div>
+    </BlogPostContent>
+</Page>

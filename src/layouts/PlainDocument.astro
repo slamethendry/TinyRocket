@@ -1,0 +1,28 @@
+---
+import Page from '../components/Page.astro'
+
+const { content } = Astro.props
+const { title, description, version } = content
+---
+
+<Page {title} {description}>
+
+    <div>
+        <header>
+            <a href='/'>
+                <div class='flex justify-center my-10'>
+                    <img class='h-28 rounded-md shadow-md shadow-zinc-500' src='/assets/logo.webp' alt='Tiny Rocket' />
+                </div>
+            </a>
+        </header>
+    </div>
+    <div class='flex justify-center font-sans text-zinc-700'>
+        <div class='text-lg w-5/6 lg:w-3/4 prose'>
+            <h1 class="text-2xl font-semibold mt-8">{title}</h1>
+            <slot />
+            <p class='text-sm mt-16'>
+                Version {version}
+            </p>
+        </div>
+    </div>
+</Page>
