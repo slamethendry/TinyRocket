@@ -10,7 +10,7 @@ const { title, publishDate, heroImage, alt } = Astro.props
 ---
 
 {heroImage && <div>
-    <img class="w-full" loading="lazy" src={heroImage} alt={alt} />
+    <img class="w-full" loading="eager" src={heroImage} alt={alt} />
 </div>}
 
 <div class='flex justify-center font-sans text-zinc-700'>

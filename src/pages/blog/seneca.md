@@ -4,7 +4,7 @@ setup: |
 title: Not how long
 publishDate: 01 June 2022
 description: A blog post with hero image
-heroImage: http://shlib.hendry.id/img/7e5/seneca.jpeg
+heroImage: /assets/img/seneca.jpeg
 ---
 
 "As a tale, so is life: not how long it is, but how good it is, is what matters."
