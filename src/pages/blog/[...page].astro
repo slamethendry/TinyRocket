@@ -2,6 +2,7 @@
 import BlogHeader from '../../components/BlogHeader.astro'
 import BlogPostPreview from '../../components/BlogPostPreview.astro'
 import Page from '../../components/Page.astro'
+import PaginationNavigation from '../../components/PaginationNavigation.astro'
 
 export async function getStaticPaths({ paginate }) {
 
@@ -14,13 +15,13 @@ export async function getStaticPaths({ paginate }) {
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props
 
-const title = 'Blog Posts'
+const title = 'Tiny Blog'
 const description = 'A SAMPLE BLOG'
 ---
 
 <Page {title} {description}>
 
-    <BlogHeader />
+    <BlogHeader {title} />
 
     <div class='flex justify-center'>
         <div class='text-lg w-5/6 lg:w-3/4'>
@@ -33,26 +34,8 @@ const description = 'A SAMPLE BLOG'
             {page.data.map((p) =>
             <BlogPostPreview post={p} />
             )}
-
-            <nav class="grid grid-cols-3" aria-label="Pagination">
-                <div class='text-left'>
-                    {page.url.prev && (
-                    <a class='font-light underline underline-offset-2 decoration-dashed' href={page.url.prev || '#' }>
-                        &larr; Newer
-                    </a>
-                    )}
-                </div>
-                <div class='text-center font-extralight'>
-                    Page {page.currentPage} / {page.lastPage}
-                </div>
-                <div class='text-right'>
-                    {page.url.next && (
-                    <a class='font-light underline underline-offset-2 decoration-dashed' href={page.url.next || '#' }>
-                        Older &rarr;
-                    </a>
-                    )}
-                </div>
-            </nav>
         </div>
     </div>
+
+    <PaginationNavigation {page} />
 </Page>
