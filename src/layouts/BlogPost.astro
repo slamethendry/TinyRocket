@@ -8,7 +8,7 @@ const { title, description, publishDate, heroImage, alt } = content
 ---
 
 <Page {title} {description}>
-    <BlogHeader />
+    <BlogHeader {title} />
     <BlogPostContent {title} {heroImage} {publishDate} {alt}>
         <div>
             <p class='text-lg my-6'>

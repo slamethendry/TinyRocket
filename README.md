@@ -16,7 +16,7 @@ Some key settings are documented in [Tiny Rocket's About page](https://tinyrocke
 
 Below is an overview.
 
-```
+```bash
 /
 ├── public/
 │   ├── robots.txt
@@ -37,7 +37,6 @@ Below is an overview.
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
 Any static assets, like images, are placed in the `public/` directory.
-
 
 ## 👀 Want to learn more?
 
