@@ -3,6 +3,7 @@ import Page from '../components/Page.astro'
 
 const { content } = Astro.props
 const { title, description, version } = content
+const displayVersion = version ? 'Version ' + version : ''
 ---
 
 <Page {title} {description}>
@@ -21,7 +22,7 @@ const { title, description, version } = content
             <h1 class="text-2xl font-semibold mt-8">{title}</h1>
             <slot />
             <p class='text-sm mt-16'>
-                Version {version}
+                {displayVersion}
             </p>
         </div>
     </div>

@@ -17,6 +17,10 @@ const { page } = Astro.props
 
 const title = 'Tiny Blog'
 const description = 'A SAMPLE BLOG'
+
+// <aside data-pagefind-ignore> is a toggle for pagefind.app to exclude the
+// portion from search result, i.e. in this case to exclude the TOC from being
+// shown again in the result.
 ---
 
 <Page {title} {description}>
@@ -25,15 +29,17 @@ const description = 'A SAMPLE BLOG'
 
     <div class='flex justify-center'>
         <div class='text-lg w-5/6 lg:w-3/4'>
-            <div>
-                <p class='my-6 font-semibold'>
-                    {description}
-                </p>
-            </div>
+            <aside data-pagefind-ignore>
+                <div>
+                    <p class='my-6 font-semibold'>
+                        {description}
+                    </p>
+                </div>
 
-            {page.data.map((p) =>
-            <BlogPostPreview post={p} />
-            )}
+                {page.data.map((p) =>
+                <BlogPostPreview post={p} />
+                )}
+            </aside>
         </div>
     </div>
 

@@ -4,11 +4,12 @@ A minimally styled theme for Astro.
 
 🧑‍🚀 Features:
 
-- ✅ For small company website with company blog
-- ✅ Can be used for personal website and/or blog
+- ✅ Designed for company website and blog
+- ✅ Simple enough for personal website and/or blog
 - ✅ Markdown support
 - ✅ Sitemap.xml generation
 - ✅ Style is highly customisable with Tailwind CSS
+- ✅ Search capability using lightweight client-side JS
 
 Some key settings are documented in [Tiny Rocket's About page](https://tinyrocket.pages.dev/about).
 
@@ -19,6 +20,8 @@ Below is an overview.
 ```bash
 /
 ├── public/
+│   ├── assets
+│   ├── _pagefind
 │   ├── robots.txt
 │   └── favicon.ico
 ├── src/
@@ -26,7 +29,8 @@ Below is an overview.
 │   ├── layouts/
 │   └── pages/
 │       └── index.astro
-│       └── about.astro
+│       └── doc.astro
+│       └── search.astro
 │       └── privacy.md
 │       └── blog/
 │           └── [...page].astro

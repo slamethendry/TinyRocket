@@ -1,0 +1,86 @@
+---
+
+import Page from '../components/Page.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+
+const title = 'Customisation'
+const description = 'Customisation notes'
+
+---
+
+<Page {title} {description}>
+
+    <SiteHeader />
+
+    <div class='flex justify-center'>
+        <div class='text-lg container w-5/6 lg:w-3/4'>
+            <h1 class='my-6 font-semibold'>
+                {description}
+            </h1>
+            <p class='my-6'>Tiny Rocket is intentionally minimal and is meant as a starter for use-case specific customisation. Below is a starting point for your own customisation.
+            </p>
+            <div class='grid grid-cols-3 gap-y-4 sm:grid-cols-5'>
+                <div class='font-semibold'>Topic</div>
+                <div class='col-span-2 sm:col-span-4 font-semibold'>Note</div>
+                <div>Contents</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Website pages and blog posts are in the default Astro <code>src/pages/ directory</code>.</div>
+                <div>CSS</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Styling uses Tailwind CSS and the <code>typography</code> plugin is included. You can replace Tailwind with your preferred CSS.</div>
+                <div>Language</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>HTML language is set in <code>src/components/Page.astro</code>.</div>
+                <div>Copyright</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Copyright notice is set in <code>src/components/Footer.astro</code> and if you do not need it, just delete it.</div>
+                <div>Pagination</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Blog pagination is set in <code>src/pages/blog/[...page].astro</code> in <code>pageSize</code> variable.</div>
+                <div>Header</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Header for the website is different from the blog: <code>SiteHeader.astro</code> and <code>BlogHeader.astro</code> in <code>src/components/</code> to differentiate the styling (or even navigation, if needed). If you want them to be identical, then you can replace all calls to BlogHeader component with SiteHeader component.</div>
+                <div>Sitemap</div>
+                <div class='col-span-2 sm:col-span-4 break-words'><code>Sitemap.xml</code> is generated automatically, but you MUST change the site name (hostname) to yours. Site name is set in <code>astro.config.mjs</code> in <code class='font-semibold'>site</code> variable. Note that the sitemap is not visible in development mode - it is generated during "astro build" (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/tree/main/packages/integrations/sitemap'>see documentation</a>).</div>
+                <div>Robots</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>After you set up the hostname / site name for sitemap.xml, edit the <code>public/robots.txt</code> file and append with the generated sitemap.xml's absolute URL (e.g. <code>Sitemap: https://example.com/sitemap.xml</code>).</div>
+                <div>Deployment</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Please check <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/deploy/'>Astro deployment guide</a> for your hosting provider and follow accordingly.</div>
+                <div>Search</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Search uses <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/CloudCannon/pagefind'>pagefind</a> (MIT License) and is shipped by default but NOT turned on. If you do not want search, just delete it from the template as you customise your site. (For now, pagefind v0.4.1 seems to run well on English / Latin characters but not yet on others, e.g. Japanese.)<br /> If you want to turn it on, you need to add pagefind's indexing step (<code>npx pagefind --source dist</code>) after the build step on your deployment platform. For example:<br /> <code>npm run build; npx pagefind --source dist</code></div>
+                <div></div>
+                <div class='col-span-2 sm:col-span-4 break-words'></div>
+            </div>
+            <p class='font-semibold'>Thanks</p>
+            <p class='my-6'>
+                Thank you
+                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://developers.cloudflare.com/pages/framework-guides/astro/'>Cloudflare Pages</a> for hosting this Tiny Rocket example site, <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://unsplash.com/@kolamdigital'>Andy Hermawan</a> for the Unsplash images,
+                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://loremipsum.io'>LoremIpsum.io</a>, and the open source communities of
+                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://astro.build'>Astro</a>,
+                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://tailwindcss.com'>Tailwind</a>, and
+                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://pagefind.app'>pagefind</a>. And to
+                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://github.com/aalhendi'>Abdulrazzaq Alhendi</a> for the PR.
+            </p>
+            <p class='font-semibold my-6'>Versions</p>
+            <div class='grid grid-cols-3 gap-y-4 sm:grid-cols-5'>
+                <div>0.9.1</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Add search</div>
+                <div>0.9.0</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Initial release</div>
+            </div>
+            <p class='font-semibold my-6'>History</p>
+            <p class='my-6'>
+                I was hand-coding a company website and as Astro entered the 1.0-beta phase, I tried Astro and found synergy with the rest of my work and I had no issue with the beta versions, so I settled on using Astro.</p>
+            <p class='my-6'>
+                The defaults that came with <code>npm create astro@latest</code> (as of May 2022) worked well, but I needed to customise it. So I:
+            <ul class='list-disc ml-8'>
+                <li>Removed Google Font</li>
+                <li>Replaced all styling with Tailwind CSS</li>
+                <li>Added <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://docs.astro.build/en/core-concepts/routing/#pagination'>pagination</a></li>
+                <li>Added sitemap.xml generator</li>
+            </ul>
+            </p>
+            <p class='my-6'>
+                And that became the initial version of Tiny Rocket theme (v0.9.0).
+            </p>
+            <p class='my-6'>
+                I hope Tiny Rocket is useful for someone out there. Happy hacking!<br />
+                ~ <a class='underline underline-offset-2 decoration-dashed font-extralight' target='_blank' href='https://github.com/slamethendry/tinyrocket'>Slamet</a>
+            </p>
+        </div>
+    </div>
+</Page>
