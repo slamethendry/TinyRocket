@@ -11,7 +11,7 @@ A minimally styled theme for Astro.
 - ✅ Style is highly customisable with Tailwind CSS
 - ✅ Search capability using lightweight client-side JS
 
-Some key settings are documented in [Tiny Rocket's About page](https://tinyrocket.pages.dev/about).
+Refer to [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc).
 
 ## 🚀 Project Structure
 
@@ -46,4 +46,4 @@ Any static assets, like images, are placed in the `public/` directory.
 
 - [Astro documentation](https://github.com/withastro/astro)
 
-- [Tiny Rocket's About page](https://tinyrocket.pages.dev/about)
+- [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc)
