@@ -41,7 +41,7 @@ const description = 'Customisation notes'
                 <div>Deployment</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Please check <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/deploy/'>Astro deployment guide</a> for your hosting provider and follow accordingly.</div>
                 <div>Search</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Search uses <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/CloudCannon/pagefind'>pagefind</a> (MIT License) and is shipped by default but NOT turned on. If you do not want search, just delete it from the template as you customise your site. (For now, pagefind v0.4.1 seems to run well on English / Latin characters but not yet on others, e.g. Japanese.)<br /> If you want to turn it on, you need to add pagefind's indexing step (<code>npx pagefind --source dist</code>) after the build step on your deployment platform. For example:<br /> <code>npm run build; npx pagefind --source dist</code></div>
+                <div class='col-span-2 sm:col-span-4 break-words'>Search uses <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/CloudCannon/pagefind'>pagefind</a> (MIT License) and is shipped by default but NOT turned on. If you do not want search, just delete it from the template as you customise your site.<br /> If you want to turn it on, you need to add pagefind's indexing step (<code>npx pagefind --source dist</code>) after the build step on your deployment platform. For example:<br /> <code>npm run build; npx pagefind --source dist</code></div>
                 <div></div>
                 <div class='col-span-2 sm:col-span-4 break-words'></div>
             </div>
@@ -57,6 +57,12 @@ const description = 'Customisation notes'
             </p>
             <p class='font-semibold my-6'>Versions</p>
             <div class='grid grid-cols-3 gap-y-4 sm:grid-cols-5'>
+                <div>0.9.2</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>
+                    Update to Astro 1.0.0-RC.1 (breaking changes: see 
+                    https://docs.astro.build/en/migrate/#astro-10-release-candidate)
+                    and update pagefind to 0.5.0
+                </div>
                 <div>0.9.1</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Add search</div>
                 <div>0.9.0</div>

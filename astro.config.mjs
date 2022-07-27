@@ -7,5 +7,6 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     site: 'https://tinyrocket.pages.dev',
-    integrations: [preact(), tailwind(), sitemap()]
+    integrations: [preact(), tailwind(), sitemap()],
+    legacy: {astroFlavoredMarkdown: true}
 });
