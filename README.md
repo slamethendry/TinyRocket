@@ -6,7 +6,7 @@ A minimally styled theme for Astro.
 
 - ✅ Designed for company website and blog
 - ✅ Simple enough for personal website and/or blog
-- ✅ Markdown support
+- ✅ Markdown support (.mdx)
 - ✅ Sitemap.xml generation
 - ✅ Style is highly customisable with Tailwind CSS
 - ✅ Search capability using lightweight client-side JS

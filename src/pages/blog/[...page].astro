@@ -6,7 +6,7 @@ import PaginationNavigation from '../../components/PaginationNavigation.astro'
 
 export async function getStaticPaths({ paginate }) {
 
-    let allPosts = await Astro.glob('../blog/*.md')
+    let allPosts = await Astro.glob('../blog/*.mdx')
     allPosts = allPosts.sort(
         (a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
 
@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props
 
-const title = 'Tiny Blog'
+const title = 'Tiny Blog Example'
 const description = 'A SAMPLE BLOG'
 
 // <aside data-pagefind-ignore> is a toggle for pagefind.app to exclude the
