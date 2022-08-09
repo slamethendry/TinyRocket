@@ -35,17 +35,40 @@ const description = 'Customisation notes'
                 <div>Header</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Header for the website is different from the blog: <code>SiteHeader.astro</code> and <code>BlogHeader.astro</code> in <code>src/components/</code> to differentiate the styling (or even navigation, if needed). If you want them to be identical, then you can replace all calls to BlogHeader component with SiteHeader component.</div>
                 <div>Sitemap</div>
-                <div class='col-span-2 sm:col-span-4 break-words'><code>Sitemap.xml</code> is generated automatically, but you MUST change the site name (hostname) to yours. Site name is set in <code>astro.config.mjs</code> in <code class='font-semibold'>site</code> variable. Note that the sitemap is not visible in development mode - it is generated during "astro build" (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/tree/main/packages/integrations/sitemap'>see documentation</a>).</div>
+                <div class='col-span-2 sm:col-span-4 break-words'><code>Sitemap.xml</code> is generated automatically using @astrojs/sitemap, but you MUST change the site name (hostname) to yours. Site name is set in <code>astro.config.mjs</code> in <code class='font-semibold'>site</code> variable. Note that the sitemap is not visible in development mode - it is generated during "astro build" (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/tree/main/packages/integrations/sitemap'>see documentation</a>).</div>
                 <div>Robots</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>After you set up the hostname / site name for sitemap.xml, edit the <code>public/robots.txt</code> file and append with the generated sitemap.xml's absolute URL (e.g. <code>Sitemap: https://example.com/sitemap.xml</code>).</div>
                 <div>Deployment</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Please check <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/deploy/'>Astro deployment guide</a> for your hosting provider and follow accordingly.</div>
                 <div>Search</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Search uses <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/CloudCannon/pagefind'>pagefind</a> (MIT License) and is shipped by default but NOT turned on. If you do not want search, just delete it from the template as you customise your site.<br /> If you want to turn it on, you need to add pagefind's indexing step (<code>npx pagefind --source dist</code>) after the build step on your deployment platform. For example:<br /> <code>npm run build; npx pagefind --source dist</code></div>
-                <div></div>
-                <div class='col-span-2 sm:col-span-4 break-words'></div>
+                <div class='col-span-2 sm:col-span-4 break-words'>
+                    <p class='mb-4'>
+                        Search uses <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/CloudCannon/pagefind'>pagefind</a> (MIT License) and is shipped by default but NOT turned on. If you do not want search, just delete it from the template as you customise your site.
+                    </p>
+                    <p class='mb-4'>
+                        If you want to turn it on, you need to add pagefind's indexing step (<code>npx pagefind --source dist</code>) after the build step on your deployment platform. For example:<br /> <code>npm run build; npx pagefind --source dist</code>
+                    </p>
+                </div>
+                <div>RSS Feed</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>
+                    <p class='mb-4'>
+                        RSS.xml is generated automatically by <code>src/pages/rss.xml.ts</code> using @astrojs/rss. At the very least, you MUST edit the <code>title and description</code> for the RSS feed in the .ts file.
+                    </p>
+                    <p class='mb-4'>
+                        And similar to sitemap, RSS also uses <code class='font-semibold'>site</code> variable that is set in <code>astro.config.mjs</code>.
+                    </p>
+                    <p class='mb-4'>
+                        Caveat: @astrojs/rss takes the <code>pubDate</code> in the blog post frontmatter as local time, but displays ISOString in the rss.xml output (as of v0.2.2). Depending on your  time zone, this can have side effect. 
+                    </p>
+                    <p class='mb-4'>
+                        If you want to ensure the date in the rss.xml to be the same as date entered, then you need to append 'GMT' or 'UTC' (no time needed) to your date entry in <code>pubDate</code>, e.g. 'pubDate: 9 Aug 2022 GMT' will be displayed as '9 Aug 2022 00:00:00 GMT' in the RSS. Otherwise, @astrojs/rss will display an equivalent GMT timestamp of what it thinks as the local date.
+                    </p>
+                    <p class='mb-4'>
+                        By default, only the .mdx blog posts are included. This can be tweaked by modifying the <code>items</code> in <code>rss.xml.ts</code> (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/rss/'>see documentation</a>). If you want to serve the RSS feed differently, you can relocate the .ts file, e.g. <code>src/pages/blog/rss.xml.ts</code> and modify the blog file path accordingly.
+                    </p>
+                </div>
             </div>
-            <p class='font-semibold'>Thanks</p>
+            <p class='font-semibold mt-6'>Thanks</p>
             <p class='my-6'>
                 Thank you
                 <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://developers.cloudflare.com/pages/framework-guides/astro/'>Cloudflare Pages</a> for hosting this Tiny Rocket example site, <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://unsplash.com/@kolamdigital'>Andy Hermawan</a> for the Unsplash images,
@@ -57,6 +80,10 @@ const description = 'Customisation notes'
             </p>
             <p class='font-semibold my-6'>Versions</p>
             <div class='grid grid-cols-3 gap-y-4 sm:grid-cols-5'>
+                <div>0.9.4</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>
+                    Add RSS feed and update Astro to RC.7; breaking change: rename frontmatter <code>publishDate</code> to <code>pubDate</code>
+                </div>
                 <div>0.9.3</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>
                     Switch Markdown to MDX and update Astro to RC.3
