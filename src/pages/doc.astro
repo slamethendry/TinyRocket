@@ -26,6 +26,15 @@ const description = 'Customisation notes'
                 <div class='col-span-2 sm:col-span-4 break-words'>Website pages and blog posts are in the default Astro <code>src/pages/ directory</code>.</div>
                 <div>CSS</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Styling uses Tailwind CSS and the <code>typography</code> plugin is included. You can replace Tailwind with your preferred CSS.</div>
+                <div>Astro.config.mjs</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>
+                    <p class='mb-4'>
+                        You MUST set the value of <code>site</code> variable to your own website address. This variable is used for sitemap and RSS.
+                    </p>
+                    <p class='mb-4'>
+                        You can change the value of <code>legacy.astroFlavoredMarkdown</code> variable (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/reference/configuration-reference/#legacyastroflavoredmarkdown'>see documentation</a>).  
+                    </p>
+                </div>
                 <div>Language</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>HTML language is set in <code>src/components/Page.astro</code>.</div>
                 <div>Copyright</div>
@@ -35,9 +44,9 @@ const description = 'Customisation notes'
                 <div>Header</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Header for the website is different from the blog: <code>SiteHeader.astro</code> and <code>BlogHeader.astro</code> in <code>src/components/</code> to differentiate the styling (or even navigation, if needed). If you want them to be identical, then you can replace all calls to BlogHeader component with SiteHeader component.</div>
                 <div>Sitemap</div>
-                <div class='col-span-2 sm:col-span-4 break-words'><code>Sitemap.xml</code> is generated automatically using @astrojs/sitemap, but you MUST change the site name (hostname) to yours. Site name is set in <code>astro.config.mjs</code> in <code class='font-semibold'>site</code> variable. Note that the sitemap is not visible in development mode - it is generated during "astro build" (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/tree/main/packages/integrations/sitemap'>see documentation</a>).</div>
+                <div class='col-span-2 sm:col-span-4 break-words'><code>Sitemap.xml</code> is generated automatically using @astrojs/sitemap. Note that the sitemap is not visible in development mode - it is generated during "astro build" (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/tree/main/packages/integrations/sitemap'>see documentation</a>).</div>
                 <div>Robots</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>After you set up the hostname / site name for sitemap.xml, edit the <code>public/robots.txt</code> file and append with the generated sitemap.xml's absolute URL (e.g. <code>Sitemap: https://example.com/sitemap.xml</code>).</div>
+                <div class='col-span-2 sm:col-span-4 break-words'>After you set up the hostname / site name in <code>Astro.config.mjs</code>, edit the <code>public/robots.txt</code> file and append with the generated sitemap.xml's absolute URL (e.g. <code>Sitemap: https://example.com/sitemap.xml</code>).</div>
                 <div>Deployment</div>
                 <div class='col-span-2 sm:col-span-4 break-words'>Please check <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/deploy/'>Astro deployment guide</a> for your hosting provider and follow accordingly.</div>
                 <div>Search</div>
@@ -55,10 +64,7 @@ const description = 'Customisation notes'
                         RSS.xml is generated automatically by <code>src/pages/rss.xml.ts</code> using @astrojs/rss. At the very least, you MUST edit the <code>title and description</code> for the RSS feed in the .ts file.
                     </p>
                     <p class='mb-4'>
-                        And similar to sitemap, RSS also uses <code class='font-semibold'>site</code> variable that is set in <code>astro.config.mjs</code>.
-                    </p>
-                    <p class='mb-4'>
-                        Caveat: @astrojs/rss takes the <code>pubDate</code> in the blog post frontmatter as local time, but displays ISOString in the rss.xml output (as of v0.2.2). Depending on your  time zone, this can have side effect. 
+                        Caveat: @astrojs/rss takes the <code>pubDate</code> in the blog post frontmatter as local time, but displays  <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/blob/main/packages/astro-rss/src/index.ts'>pubDate.toUTCString()</a> in the rss.xml output (as of v0.2.2). Depending on your time zone, this can have side effect. 
                     </p>
                     <p class='mb-4'>
                         If you want to ensure the date in the rss.xml to be the same as date entered, then you need to append 'GMT' or 'UTC' (no time needed) to your date entry in <code>pubDate</code>, e.g. 'pubDate: 9 Aug 2022 GMT' will be displayed as '9 Aug 2022 00:00:00 GMT' in the RSS. Otherwise, @astrojs/rss will display an equivalent GMT timestamp of what it thinks as the local date.

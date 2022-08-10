@@ -10,6 +10,7 @@ A minimally styled theme for Astro.
 - ✅ Sitemap.xml generation
 - ✅ Style is highly customisable with Tailwind CSS
 - ✅ Search capability using lightweight client-side JS
+- ✅ RSS feed (rss.xml) generation
 
 Refer to [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc).
 
@@ -32,13 +33,14 @@ Below is an overview.
 │       └── doc.astro
 │       └── search.astro
 │       └── privacy.md
+│       └── rss.xml.ts
 │       └── blog/
 │           └── [...page].astro
 │           └── few_sample_posts.md
 └── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.astro` or `.mdx` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
 Any static assets, like images, are placed in the `public/` directory.
 
