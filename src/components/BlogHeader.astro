@@ -1,36 +1,27 @@
 ---
 export interface Props {
-    title: string
+    title: string;
 }
 
-const { title } = Astro.props
-
+const { title } = Astro.props;
 ---
 
-<header class='font-sans text-zinc-700 text-lg'>
-    <a href='/blog'>
-        <div class='flex justify-center my-10'>
-            <img class='h-28 rounded-md shadow-md shadow-zinc-500' src='/assets/blog.webp' alt='Tiny Rocket Blog' />
+<header class="font-sans text-zinc-700 text-lg">
+    <a href="/blog">
+        <div class="flex justify-center my-10">
+            <img
+                class="h-28 rounded-md shadow-md shadow-zinc-500"
+                src="/assets/blog.webp"
+                alt="Tiny Rocket Blog"
+            />
         </div>
         <p class="text-center text-3xl mt-6 mb-3 font-extrabold font-mono">
             {title}
         </p>
     </a>
-    <nav class='flex justify-center mt-6 mb-12'>
-        <a class='mx-2 underline underline-offset-2 decoration-dashed' href='/'>
-            Home
-        </a>
-        <a class='mx-2 underline underline-offset-2 decoration-dashed' href='/blog'>
-            Blog
-        </a>
-        <a class='mx-2 underline underline-offset-2 decoration-dashed' href='/doc'>
-            Doc
-        </a>
-        <a class='mx-2 underline underline-offset-2 decoration-dashed' href='/rss.xml'>
-            RSS
-        </a>
-        <a class='mx-2 underline underline-offset-2 decoration-dashed' href='/search'>
-            Search
-        </a>
+    <nav class="flex justify-center mt-6 mb-12">
+        <a class="mx-2 underline underline-offset-2" href="/"> Home</a>
+        <a class="mx-2 underline underline-offset-2" href="/doc"> Doc</a>
+        <a class="mx-2 underline underline-offset-2" href="/search"> Search</a>
     </nav>
 </header>

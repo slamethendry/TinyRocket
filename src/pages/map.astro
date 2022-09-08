@@ -1,0 +1,17 @@
+---
+import WebMap from "../components/WebMap.astro";
+import Page from "../components/Page.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+const title = "Our Location";
+const description = "A LeafletJS map example";
+---
+
+<Page {title} {description}>
+    <SiteHeader />
+
+    <p class="mt-4 mb-8 text-center">This is a demo of the WebMap component.</p>
+    <div class="flex justify-center">
+        <WebMap lon={41.9} lat={12.49} zoom={5} />
+    </div>
+</Page>

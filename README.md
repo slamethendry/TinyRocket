@@ -1,6 +1,6 @@
 # Tiny Rocket
 
-A minimally styled theme for Astro.
+A starter theme for Astro.
 
 🧑‍🚀 Features:
 
@@ -11,6 +11,7 @@ A minimally styled theme for Astro.
 - ✅ Style is highly customisable with Tailwind CSS
 - ✅ Search capability using lightweight client-side JS
 - ✅ RSS feed (rss.xml) generation
+- ✅ Web map / geolocation
 
 Refer to [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc).
 
@@ -22,6 +23,7 @@ Below is an overview.
 /
 ├── public/
 │   ├── assets
+│   ├── _leaflet
 │   ├── _pagefind
 │   ├── robots.txt
 │   └── favicon.ico
@@ -32,7 +34,9 @@ Below is an overview.
 │       └── index.astro
 │       └── doc.astro
 │       └── search.astro
-│       └── privacy.md
+│       └── map.astro
+│       └── about.mdx
+│       └── privacy.mdx
 │       └── rss.xml.ts
 │       └── blog/
 │           └── [...page].astro

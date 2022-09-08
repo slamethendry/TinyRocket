@@ -1,136 +1,356 @@
 ---
+import Page from "../components/Page.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 
-import Page from '../components/Page.astro'
-import SiteHeader from '../components/SiteHeader.astro'
-
-const title = 'Customisation'
-const description = 'Customisation notes'
-
+const title = "Customisation";
+const description = "Customisation notes";
 ---
 
 <Page {title} {description}>
-
     <SiteHeader />
 
-    <div class='flex justify-center'>
-        <div class='text-lg container w-5/6 lg:w-3/4'>
-            <h1 class='my-6 font-semibold'>
+    <div class="flex justify-center">
+        <div class="text-lg container w-5/6 lg:w-3/4">
+            <h1 class="my-6 font-semibold">
                 {description}
             </h1>
-            <p class='my-6'>Tiny Rocket is intentionally minimal and is meant as a starter for use-case specific customisation. Below is a starting point for your own customisation.
+            <p class="mt-6 mb-4">
+                Tiny Rocket is intentionally minimal in style and is meant as a
+                starter for use-case specific CSS customisation using Tailwind.
             </p>
-            <div class='grid grid-cols-3 gap-y-4 sm:grid-cols-5'>
-                <div class='font-semibold'>Topic</div>
-                <div class='col-span-2 sm:col-span-4 font-semibold'>Note</div>
+            <p class="mb-4">
+                Feature-wise, it comes with a number of often-used features
+                built-in. Below is an overview of Tiny Rocket, before you dive
+                into the code.
+            </p>
+            <div class="grid grid-cols-3 gap-y-4 sm:grid-cols-5">
+                <div class="font-semibold">Topic</div>
+                <div class="col-span-2 sm:col-span-4 font-semibold">Note</div>
                 <div>Contents</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Website pages and blog posts are in the default Astro <code>src/pages/ directory</code>.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Website pages and blog posts are in the default Astro <code
+                        >src/pages/ directory</code
+                    >.
+                </div>
                 <div>CSS</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Styling uses Tailwind CSS and the <code>typography</code> plugin is included. You can replace Tailwind with your preferred CSS.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Styling uses Tailwind CSS and the <code>typography</code> plugin
+                    is included. You can replace Tailwind with your preferred CSS.
+                </div>
                 <div>Astro.config.mjs</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
-                    <p class='mb-4'>
-                        You MUST set the value of <code>site</code> variable to your own website address. This variable is used for sitemap and RSS.
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    <p class="mb-4">
+                        You MUST set the value of <code>site</code> variable to your
+                        own website address. This variable is used for sitemap and
+                        RSS.
                     </p>
-                    <p class='mb-4'>
-                        You can change the value of <code>legacy.astroFlavoredMarkdown</code> variable (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/reference/configuration-reference/#legacyastroflavoredmarkdown'>see documentation</a>).  
+                    <p class="mb-4">
+                        You can change the value of <code
+                            >legacy.astroFlavoredMarkdown</code
+                        > variable (<a
+                            class="underline underline-offset-2 font-light"
+                            target="_blank"
+                            href="https://docs.astro.build/en/reference/configuration-reference/#legacyastroflavoredmarkdown"
+                            >see Astro documentation</a
+                        >).
                     </p>
                 </div>
                 <div>Language</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>HTML language is set in <code>src/components/Page.astro</code>.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    HTML language is set in <code
+                        >src/components/Page.astro</code
+                    >.
+                </div>
                 <div>Copyright</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Copyright notice is set in <code>src/components/Footer.astro</code> and if you do not need it, just delete it.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Copyright notice is set in <code
+                        >src/components/Footer.astro</code
+                    > and if you do not need it, just remove it from the footer.
+                </div>
                 <div>Pagination</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Blog pagination is set in <code>src/pages/blog/[...page].astro</code> in <code>pageSize</code> variable.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Blog pagination is set in <code
+                        >src/pages/blog/[...page].astro</code
+                    > in <code>pageSize</code> variable.
+                </div>
                 <div>Header</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Header for the website is different from the blog: <code>SiteHeader.astro</code> and <code>BlogHeader.astro</code> in <code>src/components/</code> to differentiate the styling (or even navigation, if needed). If you want them to be identical, then you can replace all calls to BlogHeader component with SiteHeader component.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Header for the website is different from the blog: <code
+                        >SiteHeader.astro</code
+                    > and <code>BlogHeader.astro</code> in <code
+                        >src/components/</code
+                    > to differentiate the styling (or even navigation, if needed).
+                    If you want them to be identical, then you can replace all calls
+                    to BlogHeader component with SiteHeader component.
+                </div>
                 <div>Sitemap</div>
-                <div class='col-span-2 sm:col-span-4 break-words'><code>Sitemap.xml</code> is generated automatically using @astrojs/sitemap. Note that the sitemap is not visible in development mode - it is generated during "astro build" (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/tree/main/packages/integrations/sitemap'>see documentation</a>).</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    <code>Sitemap.xml</code> is generated automatically using @astrojs/sitemap.
+                    Note that the sitemap is not visible in development mode - it
+                    is generated during "astro build" (<a
+                        class="underline underline-offset-2 font-light"
+                        target="_blank"
+                        href="https://github.com/withastro/astro/tree/main/packages/integrations/sitemap"
+                        >see Astro documentation</a
+                    >).
+                </div>
                 <div>Robots</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>After you set up the hostname / site name in <code>Astro.config.mjs</code>, edit the <code>public/robots.txt</code> file and append with the generated sitemap.xml's absolute URL (e.g. <code>Sitemap: https://example.com/sitemap.xml</code>).</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    After you set up the hostname / site name in <code
+                        >Astro.config.mjs</code
+                    >, edit the <code>public/robots.txt</code> file and append with
+                    the generated sitemap.xml's absolute URL (e.g. <code
+                        >Sitemap: https://example.com/sitemap.xml</code
+                    >).
+                </div>
                 <div>Deployment</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Please check <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/deploy/'>Astro deployment guide</a> for your hosting provider and follow accordingly.</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Please check <a
+                        class="underline underline-offset-2 font-light"
+                        target="_blank"
+                        href="https://docs.astro.build/en/guides/deploy/"
+                        >Astro deployment guide</a
+                    > for your hosting provider and follow accordingly.
+                </div>
                 <div>Search</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
-                    <p class='mb-4'>
-                        Search uses <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/CloudCannon/pagefind'>pagefind</a> (MIT License) and is shipped by default but NOT turned on. If you do not want search, just delete it from the template as you customise your site.
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    <p class="mb-4">
+                        Search uses <a
+                            class="underline underline-offset-2 font-light"
+                            target="_blank"
+                            href="https://github.com/CloudCannon/pagefind"
+                            >pagefind</a
+                        > (MIT License) and is shipped by default but NOT turned
+                        on. If you do not want search, just delete it from the template
+                        as you customise your site.
                     </p>
-                    <p class='mb-4'>
-                        If you want to turn it on, you need to add pagefind's indexing step (<code>npx pagefind --source dist</code>) after the build step on your deployment platform. For example:<br /> <code>npm run build; npx pagefind --source dist</code>
+                    <p class="mb-4">
+                        If you want to turn it on, you need to add pagefind's
+                        indexing step (<code>npx pagefind --source dist</code>)
+                        after the build step on your deployment platform. For
+                        example:<br />
+                        <code>npm run build; npx pagefind --source dist</code>
                     </p>
                 </div>
                 <div>RSS Feed</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
-                    <p class='mb-4'>
-                        RSS.xml is generated automatically by <code>src/pages/rss.xml.ts</code> using @astrojs/rss. At the very least, you MUST edit the <code>title and description</code> for the RSS feed in the .ts file.
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    <p class="mb-4">
+                        RSS.xml is generated automatically by <code
+                            >src/pages/rss.xml.ts</code
+                        > using @astrojs/rss. At the very least, you MUST edit the
+                        <code>title and description</code> for the RSS feed in the
+                        .ts file.
                     </p>
-                    <p class='mb-4'>
-                        Caveat: @astrojs/rss takes the <code>pubDate</code> in the blog post frontmatter as local time, but displays  <a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://github.com/withastro/astro/blob/main/packages/astro-rss/src/index.ts'>pubDate.toUTCString()</a> in the rss.xml output (as of v0.2.2). Depending on your time zone, this can have side effect. 
+                    <p class="mb-4">
+                        Caveat: @astrojs/rss takes the <code>pubDate</code> in the
+                        blog post frontmatter as local time, but displays <a
+                            class="underline underline-offset-2 font-light"
+                            target="_blank"
+                            href="https://github.com/withastro/astro/blob/main/packages/astro-rss/src/index.ts"
+                            >pubDate.toUTCString()</a
+                        > in the rss.xml output (as of v0.2.2). Depending on your
+                        time zone, this can have side effect.
                     </p>
-                    <p class='mb-4'>
-                        If you want to ensure the date in the rss.xml to be the same as date entered, then you need to append 'GMT' or 'UTC' (no time needed) to your date entry in <code>pubDate</code>, e.g. 'pubDate: 9 Aug 2022 GMT' will be displayed as '9 Aug 2022 00:00:00 GMT' in the RSS. Otherwise, @astrojs/rss will display an equivalent GMT timestamp of what it thinks as the local date.
+                    <p class="mb-4">
+                        If you want to ensure the date in the rss.xml to be the
+                        same as date entered, then you need to append 'GMT' or
+                        'UTC' (no time needed) to your date entry in <code
+                            >pubDate</code
+                        >, e.g. 'pubDate: 9 Aug 2022 GMT' will be displayed as
+                        '9 Aug 2022 00:00:00 GMT' in the RSS. Otherwise,
+                        @astrojs/rss will display an equivalent GMT timestamp of
+                        what it thinks as the local date.
                     </p>
-                    <p class='mb-4'>
-                        By default, only the .mdx blog posts are included. This can be tweaked by modifying the <code>items</code> in <code>rss.xml.ts</code> (<a class='underline underline-offset-2 decoration-dashed font-light' target='_blank' href='https://docs.astro.build/en/guides/rss/'>see documentation</a>). If you want to serve the RSS feed differently, you can relocate the .ts file, e.g. <code>src/pages/blog/rss.xml.ts</code> and modify the blog file path accordingly.
+                    <p class="mb-4">
+                        By default, only the .mdx blog posts are included. This
+                        can be tweaked by modifying the <code>items</code> in <code
+                            >rss.xml.ts</code
+                        > (<a
+                            class="underline underline-offset-2 font-light"
+                            target="_blank"
+                            href="https://docs.astro.build/en/guides/rss/"
+                            >see documentation</a
+                        >). If you want to serve the RSS feed differently, you
+                        can relocate the .ts file, e.g. <code
+                            >src/pages/blog/rss.xml.ts</code
+                        > and modify the blog file path accordingly.
                     </p>
                 </div>
+                <div>Web Map</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    <p class="mb-4">
+                        Web map component (WebMap) uses <a
+                            class="underline underline-offset-2"
+                            target="_blank"
+                            href="https://leafletjs.com">LeafletJS</a
+                        > (BSD License).
+                    </p>
+                    <p class="mb-4">The input props are:</p><ol
+                        class="list-decimal ml-4"
+                    >
+                        <li>lon: longitude</li>
+                        <li>lat: latitude</li>
+                        <li>
+                            mapLon: optional, longitude of the map centre;
+                            sometimes you want the marker for your location to
+                            be off-centred
+                        </li>
+                        <li>mapLat: optional, latitude of the map centre</li>
+                        <li>
+                            mapTile: optional, url for the map tiles, default is
+                            OpenStreetMap (OSM)
+                        </li>
+                        <li>
+                            mapSource: optional, the map tile provider, default
+                            is OSM
+                        </li>
+                        <li>zoom: optional, map zoom level, default is 13</li>
+                        <li>mapWidth: optional, default is 400 pixel</li>
+                        <li>mapHeight: optional, default is 400 pixel</li>
+                    </ol>
+                    <p class="my-4">
+                        To display a map, you need to have a map tile provider.
+                        Please consult
+                        <a
+                            class="underline underline-offset-2"
+                            target="_blank"
+                            href="https://wiki.openstreetmap.org/wiki/Commercial_OSM_Software_and_Services"
+                            >this OSM list</a
+                        >.
+                    </p>
+                    <p class="mb-4"></p>If you do not input the map tile
+                    provider, then you explicitly choose to use OpenStreetMap
+                    intentionally and Tiny Rocket will retrieve OpenStreetMap
+                    tiles for you. In doing so, you agree to abide by
+                    <a
+                        class="underline underline-offset-2"
+                        target="_blank"
+                        href="https://operations.osmfoundation.org/policies/tiles/"
+                        >their policies</a
+                    >.
+                </div>
             </div>
-            <p class='font-semibold mt-6'>Thanks</p>
-            <p class='my-6'>
+            <p class="font-semibold mt-6">Thanks</p>
+            <p class="my-6">
                 Thank you
-                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://developers.cloudflare.com/pages/framework-guides/astro/'>Cloudflare Pages</a> for hosting this Tiny Rocket example site, <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://unsplash.com/@kolamdigital'>Andy Hermawan</a> for the Unsplash images,
-                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://loremipsum.io'>LoremIpsum.io</a>, and the open source communities of
-                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://astro.build'>Astro</a>,
-                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://tailwindcss.com'>Tailwind</a>, and
-                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://pagefind.app'>pagefind</a>. And to
-                <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://github.com/aalhendi'>Abdulrazzaq Alhendi</a> for the PR.
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://developers.cloudflare.com/pages/framework-guides/astro/"
+                    >Cloudflare Pages</a
+                > for hosting this Tiny Rocket example site, <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://unsplash.com/@kolamdigital">Andy Hermawan</a
+                > for the Unsplash images,
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://loremipsum.io">LoremIpsum.io</a
+                >, and the open source communities of
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://astro.build">Astro</a
+                >,
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://tailwindcss.com">Tailwind</a
+                >,
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://pagefind.app">pagefind</a
+                >, and
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://leafletjs.com">LeafletJS</a
+                >. And to
+                <a
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    href="https://github.com/aalhendi">Abdulrazzaq Alhendi</a
+                > for the PR.
             </p>
-            <p class='font-semibold my-6'>Versions</p>
-            <div class='grid grid-cols-3 gap-y-4 sm:grid-cols-5'>
+            <p class="font-semibold my-6">Versions</p>
+            <div class="grid grid-cols-3 gap-y-4 sm:grid-cols-5">
+                <div>0.9.6</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Add web map and update Astro to v1.1.
+                </div>
                 <div>0.9.5</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
+                <div class="col-span-2 sm:col-span-4 break-words">
                     Update Astro to v1.0
                 </div>
                 <div>0.9.4</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
-                    Add RSS feed and update Astro to RC.7; breaking change: rename frontmatter <code>publishDate</code> to <code>pubDate</code>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Add RSS feed and update Astro to RC.7; breaking change:
+                    rename frontmatter <code>publishDate</code> to <code
+                        >pubDate</code
+                    >
                 </div>
                 <div>0.9.3</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
+                <div class="col-span-2 sm:col-span-4 break-words">
                     Switch Markdown to MDX and update Astro to RC.3
                 </div>
                 <div>0.9.2</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>
+                <div class="col-span-2 sm:col-span-4 break-words">
                     Update Astro to 1.0.0-RC.1 (
-                    <a class='underline underline-offset-2 decoration-dashed' 
-                        target='_blank' 
-                        href='https://docs.astro.build/en/migrate/#astro-10-release-candidate'>
+                    <a
+                        class="underline underline-offset-2"
+                        target="_blank"
+                        href="https://docs.astro.build/en/migrate/#astro-10-release-candidate"
+                    >
                         see breaking changes
-                    </a>) 
-                    and update pagefind to 0.5.0
+                    </a>) and update pagefind to 0.5.0
                 </div>
                 <div>0.9.1</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Add search (pagefind)</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Add search (pagefind)
+                </div>
                 <div>0.9.0</div>
-                <div class='col-span-2 sm:col-span-4 break-words'>Initial release</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Initial release
+                </div>
             </div>
-            <p class='font-semibold my-6'>History</p>
-            <p class='my-6'>
-                I was hand-coding a company website and as Astro entered the 1.0-beta phase, I tried Astro and found synergy with the rest of my work and I had no issue with the beta versions, so I settled on using Astro.</p>
-            <p class='my-6'>
-                The defaults that came with <code>npm create astro@latest</code> (as of May 2022) worked well, but I needed to customise it. So I:
-            <ul class='list-disc ml-8'>
+            <p class="font-semibold my-6">History</p>
+            <p class="my-6">
+                I was hand-coding a company website and as Astro entered the
+                1.0-beta phase, I tried Astro and found synergy with the rest of
+                my work and I had no issue with the beta versions, so I settled
+                on using Astro.
+            </p>
+            <p class="my-6">
+                The defaults that came with <code>npm create astro@latest</code>
+                (as of May 2022) worked well, but I needed to customise it. So I:
+            </p><ul class="list-disc ml-8">
                 <li>Removed Google Font</li>
                 <li>Replaced all styling with Tailwind CSS</li>
-                <li>Added <a class='underline underline-offset-2 decoration-dashed' target='_blank' href='https://docs.astro.build/en/core-concepts/routing/#pagination'>pagination</a></li>
+                <li>
+                    Added <a
+                        class="underline underline-offset-2"
+                        target="_blank"
+                        href="https://docs.astro.build/en/core-concepts/routing/#pagination"
+                        >pagination</a
+                    >
+                </li>
                 <li>Added sitemap.xml generator</li>
             </ul>
+
+            <p class="my-6">
+                And that became the initial version of Tiny Rocket theme
+                (v0.9.0).
             </p>
-            <p class='my-6'>
-                And that became the initial version of Tiny Rocket theme (v0.9.0).
-            </p>
-            <p class='my-6'>
-                I hope Tiny Rocket is useful for someone out there. Happy hacking!<br />
-                ~ <a class='underline underline-offset-2 decoration-dashed font-extralight' target='_blank' href='https://github.com/slamethendry/tinyrocket'>Slamet</a>
+            <p class="my-6">
+                I hope Tiny Rocket is useful for someone out there. Happy
+                hacking!<br />
+                ~ <a
+                    class="underline underline-offset-2 font-extralight"
+                    target="_blank"
+                    href="https://github.com/slamethendry/tinyrocket">Slamet</a
+                >
             </p>
         </div>
     </div>

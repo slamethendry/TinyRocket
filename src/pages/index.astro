@@ -1,30 +1,39 @@
 ---
-import Page from '../components/Page.astro'
-import SiteHeader from '../components/SiteHeader.astro'
+import Page from "../components/Page.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 
-const title = 'Tiny Rocket'
-const description = 'A tiny Astro starter'
+const title = "Tiny Rocket";
+const description = "A tiny Astro starter";
 ---
 
 <Page {title} {description}>
-
     <SiteHeader />
 
-    <div class='flex justify-center'>
-        <div class='text-lg w-5/6 lg:w-3/4'>
-            <h1 class='my-6 font-semibold'>
+    <div class="flex justify-center">
+        <div class="text-lg w-5/6 lg:w-3/4">
+            <h1 class="my-6 font-semibold">
                 {description}
             </h1>
-            <p class='my-6'>
-                Tiny Rocket can be used for a website that needs blog-like features. It is intended to be a starter, so it is minimally styled. You can push the design as far out as possible with <a href='https://tailwindcss.com/' class='underline underline-offset-2 decoration-dashed'>Tailwind CSS</a>.
+            <p class="my-6">
+                Tiny Rocket is an Astro theme / template. It is intended to be a
+                starter, so it is minimally styled. You can push the design as
+                far out as possible with <a
+                    href="https://tailwindcss.com/"
+                    class="underline underline-offset-2">Tailwind CSS</a
+                >.
             </p>
-            <p class='my-6'>
-                Out of the box, Tiny Rocket includes site search, sitemap, and RSS feed. See <a href='/doc' class='underline underline-offset-2 decoration-dashed'>documentation</a>.
+            <p class="my-6">
+                Out of the box, Tiny Rocket includes site search, RSS feed, and
+                web map. See <a href="/doc" class="underline underline-offset-2"
+                    >documentation</a
+                >.
             </p>
-            <p class='my-6'>
-                Source is at <a href='https://github.com/slamethendry/tinyrocket' class='underline underline-offset-2 decoration-dashed'>GitHub</a>. MIT License.
+            <p class="my-6">
+                Source is at <a
+                    href="https://github.com/slamethendry/tinyrocket"
+                    class="underline underline-offset-2">GitHub</a
+                >. MIT License.
             </p>
         </div>
     </div>
-
 </Page>

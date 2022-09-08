@@ -1,20 +1,23 @@
 ---
 export interface Props {
-    post: any
+    post: any;
 }
 
-const { post } = Astro.props
+const { post } = Astro.props;
 ---
 
-<div class='my-8 flex justify-between'>
+<div class="my-8 flex justify-between">
     <div>
-        <a class='underline underline-offset-2 decoration-dashed' href={post.url}>
-            <h1 class='font-semibold'>{post.frontmatter.title}</h1>
+        <a class="underline underline-offset-2" href={post.url}>
+            <h1 class="font-semibold">{post.frontmatter.title}</h1>
         </a>
-        <h2 class='font-light'>{post.frontmatter.description}</h2>
-        <a class='italic font-semibold text-sm text-zinc-600 underline underline-offset-2 decoration-dashed' href={post.url}>Read more</a>
+        <h2 class="font-light">{post.frontmatter.description}</h2>
+        <a
+            class="italic font-semibold text-sm text-zinc-600 underline underline-offset-2"
+            href={post.url}>Read more</a
+        >
     </div>
-    <div class='font-extralight'>
+    <div class="font-extralight">
         {post.frontmatter.pubDate}
     </div>
 </div>
