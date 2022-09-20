@@ -1,31 +1,35 @@
 ---
-import BlogHeader from '../components/BlogHeader.astro'
-import Page from '../components/Page.astro'
+import BlogHeader from "../components/BlogHeader.astro";
+import Page from "../components/Page.astro";
 
-const { content } = Astro.props
-const { title, description, pubDate, heroImage, alt } = content
+const { content } = Astro.props;
+const { title, description, pubDate, heroImage, alt } = content;
 ---
 
 <Page {title} {description}>
-    <BlogHeader title='My Blog' />
+    <BlogHeader title="My Blog" />
 
-        {heroImage && <div>
-            <img class="w-full" loading="eager" src={heroImage} alt={alt} />
-        </div>}
-        
-        <div class='flex justify-center font-sans text-zinc-700'>
-            <div class='text-lg w-5/6 lg:w-3/4 prose'>
-                <h1 class="text-2xl font-semibold mt-8">{title}</h1>
-                <p class="font-extralight mb-8">{pubDate}</p>
+    {
+        heroImage && (
+            <div>
+                <img class="w-full" loading="eager" src={heroImage} alt={alt} />
+            </div>
+        )
+    }
 
-        <div>
-            <p class='text-lg my-6'>
-                {description}
-            </p>
-        </div>
-        <div class="prose text-lg">
-            <slot />
+    <div class="flex justify-center text-zinc-700">
+        <div class="text-lg w-5/6 lg:w-3/4 prose">
+            <h1 class="text-2xl font-semibold mt-8">{title}</h1>
+            <p class="font-extralight mb-8">{pubDate}</p>
+
+            <div>
+                <p class="text-lg my-6">
+                    {description}
+                </p>
+            </div>
+            <div class="prose text-lg">
+                <slot />
+            </div>
         </div>
     </div>
-</div>
 </Page>

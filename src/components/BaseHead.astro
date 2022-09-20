@@ -4,8 +4,8 @@ export interface Props {
     description: string;
 }
 const { title, description } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-const permalink = `${canonicalURL.href}`
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const permalink = `${canonicalURL.href}`;
 ---
 
 <meta charset="utf-8" />
@@ -27,3 +27,5 @@ const permalink = `${canonicalURL.href}`
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content="/assets/logo.webp" />
+
+<link rel="stylesheet" href="/assets/main.css" />

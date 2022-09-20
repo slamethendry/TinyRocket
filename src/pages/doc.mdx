@@ -1,0 +1,151 @@
+---
+layout: '../layouts/PlainDocument.astro'
+title: Documentation
+
+---
+
+Tiny Rocket's styling is intentionally minimal, but highly customisable for use-case specific CSS customisation using Tailwind.
+
+Out of the box, it comes with sitemap.xml, site search, RSS feed, and web map built-in. Below is an overview of Tiny Rocket to help you customise it to suit your project.
+
+
+#### Contents
+
+Website pages and blog posts are in the default Astro `src/pages/` directory.
+
+
+#### CSS
+
+Styling uses Tailwind CSS and the typography plugin is included. You can replace Tailwind with your preferred CSS.
+
+
+#### Astro.config.mjs
+
+You MUST set the value of `site` variable to your own website address. This variable is used for sitemap and RSS.
+
+Optional: You can toggle the value of `legacy.astroFlavoredMarkdown` variable if you want to use .mdx only or .md; [see Astro documentation](https://docs.astro.build/en/reference/configuration-reference/#legacyastroflavoredmarkdown).
+
+
+#### Language
+
+HTML language is set in `src/components/Page.astro`.
+
+
+#### Copyright
+
+If your project needs a copyright notice, it is set in `src/components/Footer.astro` and if you do not need it, just remove it from the footer. 
+
+
+#### Pagination
+
+Blog pagination is set in `src/pages/blog/[...page].astro` in `pageSize` variable.
+
+
+#### Header
+
+Header for the website is different from the blog: `SiteHeader.astro` and `BlogHeader.astro` in `src/components/` to differentiate the styling (or even navigation, if needed). If you want them to be identical, then you can replace all calls to BlogHeader component with SiteHeader component.
+
+
+#### Sitemap.xml
+
+`Sitemap.xml` is generated automatically using @astrojs/sitemap. Note that the sitemap is not visible in development mode - it is generated during "astro build"; [see Astro documentation](https://github.com/withastro/astro/tree/main/packages/integrations/sitemap).
+
+
+#### Robots.txt
+
+After you set up the hostname / site name in Astro.config.mjs, edit the `public/robots.txt` file and append with the generated sitemap.xml's absolute URL (e.g. `Sitemap: https://example.com/sitemap.xml`).
+
+
+#### Deployment
+
+Please check [Astro deployment guide](https://docs.astro.build/en/guides/deploy/) for your hosting provider and follow accordingly.
+
+
+#### Search
+
+Search uses [pagefind](https://github.com/CloudCannon/pagefind) (MIT License) and is shipped by default, but NOT turned on. If you do not want search, just delete it from the template as you customise your site.
+
+If you want to turn it on, you need to add pagefind's indexing step (`npx pagefind --source dist`) after the build step on your deployment platform. For example:  
+`npm run build; npx pagefind --source dist`
+
+
+#### RSS Feed
+
+RSS.xml is generated automatically by `src/pages/rss.xml.ts` using @astrojs/rss. At the very least, you MUST edit the title and description for the RSS feed in the .ts file.
+
+By default, only the .mdx blog posts are included. This can be tweaked by modifying the items in rss.xml.ts; [see Astro documentation](https://docs.astro.build/en/guides/rss/). If you want to serve the RSS feed differently, you can relocate the .ts file and modify the blog file path accordingly.
+
+If you add date in your blog post `pubDate` and enter only the date without time (hh:mm) for blog date, then @astrojs/rss assumes the pubDate time as 00:00 as of your build machine time zone.
+
+
+#### Web Map
+Web map component (WebMap) uses [LeafletJS](https://leafletjs.com/) (BSD License). The component input props are:
+
+1. lon: longitude
+2. lat: latitude
+3. mapLon: optional, longitude of the map centre; sometimes you want the marker for your location to be off-centred
+4. mapLat: optional, latitude of the map centre
+5. mapTile: optional, url for the map tiles, default is OpenStreetMap (OSM)
+6. mapSource: optional, the map tile provider, default is OSM
+7. zoom: optional, map zoom level, default is 13
+8. mapWidth: optional, default is 400 pixel
+9. mapHeight: optional, default is 400 pixel
+
+To display a map, you need to have a map tile provider. Please consult [this OSM list](https://wiki.openstreetmap.org/wiki/Commercial_OSM_Software_and_Services). If you do not input the map tile provider, then you explicitly choose to use OpenStreetMap intentionally and Tiny Rocket will retrieve OpenStreetMap tiles for you. In doing so, you agree to abide by [their policies](https://operations.osmfoundation.org/policies/tiles/).
+
+
+#### Self-Hosted Font
+
+Sometimes you want your font to not be too bland, so you pick something nice, but not all operating systems support the particular web font by default. You can use Google Font (or other provider) with all the privacy implications. Alternatively, you can self-host.
+
+Tiny Rocket comes with font self-hosting example. You are encouraged to change it with whatever font fancy your style. 
+
+Tiny Rocket's _example_ implementation uses "Junction", an open source font from [the League of Movable Type](https://www.theleagueofmoveabletype.com) (Open Font License). The font files are placed in `public/assets/font/`. The font definitions are in `public/main.css` and in `tailwind.config.cjs`. In this particular example, the font is called from `src/components/Page.astro` as `class="font-junction"`. In your implementation, you can call it whatever fits your needs.
+
+---
+
+
+### Thanks
+
+Thank you [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/astro/) for hosting this Tiny Rocket example site, [Andy Hermawan](https://unsplash.com/@kolamdigital) for the Unsplash images, [LoremIpsum.io](https://loremipsum.io/), and the open source communities of [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), [pagefind](https://pagefind.app/), [LeafletJS](https://leafletjs.com/), and [The League of Movable Type](https://www.theleagueofmoveabletype.com/). And to [Abdulrazzaq Alhendi](https://github.com/aalhendi) for the PR.
+
+---
+
+
+### Versions
+
+0.9.8: Add self-hosted font.
+
+0.9.7: Update Astro to v1.2 and fix doc.
+
+0.9.6: Add web map and update Astro to v1.1.
+
+0.9.5: Update Astro to v1.0
+
+0.9.4: Add RSS feed and update Astro to RC.7; breaking change: rename frontmatter publishDate to pubDate
+
+0.9.3: Switch Markdown to MDX and update Astro to RC.3
+
+0.9.2: Update Astro to 1.0.0-RC.1 ( see breaking changes ) and update pagefind to 0.5.0
+
+0.9.1: Add search (pagefind)
+
+0.9.0: Initial release
+
+
+#### History
+
+I was hand-coding a company website and as Astro entered the 1.0-beta phase, I tried Astro and found synergy with the rest of my work and I had no issue with the beta versions, so I settled on using Astro.
+
+The defaults that came with npm create astro@latest (as of May 2022) worked well, but I needed to customise it. So I:
+
+- Removed Google Font
+- Replaced all styling with Tailwind CSS; [see Astro documentation](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
+- Added pagination; [see Astro documentation](https://docs.astro.build/en/core-concepts/routing/#pagination)
+- Added sitemap.xml generator; [see Astro documentation](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+
+And that became the initial version of Tiny Rocket theme (v0.9.0).
+
+I hope Tiny Rocket is useful for someone out there. Happy hacking!
+
+~ [Slamet](https://github.com/slamethendry/tinyrocket)
