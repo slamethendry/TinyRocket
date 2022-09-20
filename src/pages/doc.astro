@@ -19,9 +19,9 @@ const description = "Customisation notes";
                 starter for use-case specific CSS customisation using Tailwind.
             </p>
             <p class="mb-4">
-                Feature-wise, it comes with a number of often-used features
-                built-in. Below is an overview of Tiny Rocket, before you dive
-                into the code.
+                Out of the box, it comes with, sitemap.xml, site search, RSS
+                feed, and web map built-in. Below is an overview of Tiny Rocket,
+                before you dive into the code.
             </p>
             <div class="grid grid-cols-3 gap-y-4 sm:grid-cols-5">
                 <div class="font-semibold">Topic</div>
@@ -142,24 +142,11 @@ const description = "Customisation notes";
                         .ts file.
                     </p>
                     <p class="mb-4">
-                        Caveat: @astrojs/rss takes the <code>pubDate</code> in the
-                        blog post frontmatter as local time, but displays <a
-                            class="underline underline-offset-2 font-light"
-                            target="_blank"
-                            href="https://github.com/withastro/astro/blob/main/packages/astro-rss/src/index.ts"
-                            >pubDate.toUTCString()</a
-                        > in the rss.xml output (as of v0.2.2). Depending on your
-                        time zone, this can have side effect.
-                    </p>
-                    <p class="mb-4">
-                        If you want to ensure the date in the rss.xml to be the
-                        same as date entered, then you need to append 'GMT' or
-                        'UTC' (no time needed) to your date entry in <code
-                            >pubDate</code
-                        >, e.g. 'pubDate: 9 Aug 2022 GMT' will be displayed as
-                        '9 Aug 2022 00:00:00 GMT' in the RSS. Otherwise,
-                        @astrojs/rss will display an equivalent GMT timestamp of
-                        what it thinks as the local date.
+                        Caveat: If you enter only "date" without time (hh:mm)
+                        which is the typical convention for blog (unless you are
+                        a real time news organisation), then @astrojs/rss
+                        assumes the <code>pubDate</code> as 00:00 as of your build
+                        machine time zone.
                     </p>
                     <p class="mb-4">
                         By default, only the .mdx blog posts are included. This
@@ -276,6 +263,10 @@ const description = "Customisation notes";
             </p>
             <p class="font-semibold my-6">Versions</p>
             <div class="grid grid-cols-3 gap-y-4 sm:grid-cols-5">
+                <div>0.9.7</div>
+                <div class="col-span-2 sm:col-span-4 break-words">
+                    Udate Astro to v1.2 and fix doc.
+                </div>
                 <div>0.9.6</div>
                 <div class="col-span-2 sm:col-span-4 break-words">
                     Add web map and update Astro to v1.1.
