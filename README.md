@@ -24,7 +24,6 @@ Below is an overview.
 ├── public/
 │   ├── assets
 │   ├── _leaflet
-│   ├── _pagefind
 │   ├── robots.txt
 │   └── favicon.ico
 ├── src/
