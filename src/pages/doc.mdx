@@ -46,14 +46,14 @@ Blog pagination is set in `src/pages/blog/[...page].astro` in `pageSize` variabl
 Header for the website is different from the blog: `SiteHeader.astro` and `BlogHeader.astro` in `src/components/` to differentiate the styling (or even navigation, if needed). If you want them to be identical, then you can replace all calls to BlogHeader component with SiteHeader component.
 
 
-#### Sitemap.xml
+#### Sitemap
 
-`Sitemap.xml` is generated automatically using @astrojs/sitemap. Note that the sitemap is not visible in development mode - it is generated during "astro build"; [see Astro documentation](https://github.com/withastro/astro/tree/main/packages/integrations/sitemap).
+`sitemap-index.xml` is generated automatically using @astrojs/sitemap. Note that the sitemap is not visible in development mode - it is generated during "astro build"; [see Astro documentation](https://github.com/withastro/astro/tree/main/packages/integrations/sitemap).
 
 
 #### Robots.txt
 
-After you set up the hostname / site name in Astro.config.mjs, edit the `public/robots.txt` file and append with the generated sitemap.xml's absolute URL (e.g. `Sitemap: https://example.com/sitemap.xml`).
+After you set up the hostname / site name in Astro.config.mjs, edit the `public/robots.txt` file and append with the generated sitemap's absolute URL (e.g. `Sitemap: https://example.com/sitemap-index.xml`).
 
 
 #### Deployment
@@ -107,12 +107,16 @@ Tiny Rocket's _example_ implementation uses "Junction", an open source font from
 
 ### Thanks
 
-Thank you [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/astro/) for hosting this Tiny Rocket example site, [Andy Hermawan](https://unsplash.com/@kolamdigital) for the Unsplash images, [LoremIpsum.io](https://loremipsum.io/), and the open source communities of [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), [pagefind](https://pagefind.app/), [LeafletJS](https://leafletjs.com/), and [The League of Movable Type](https://www.theleagueofmoveabletype.com/). And to [Abdulrazzaq Alhendi](https://github.com/aalhendi) for the PR.
+Thank you [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/astro/) for hosting this Tiny Rocket example site, [Andy Hermawan](https://unsplash.com/@kolamdigital) for the Unsplash images, [LoremIpsum.io](https://loremipsum.io/), and the open source communities of [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), [pagefind](https://pagefind.app/), [LeafletJS](https://leafletjs.com/), and [The League of Movable Type](https://www.theleagueofmoveabletype.com/).
+
+Thank you [diomed](https://github.com/diomed) and [Abdulrazzaq Alhendi](https://github.com/aalhendi) for the PRs.
 
 ---
 
 
 ### Versions
+
+0.9.12, 0.9.13: Update Astro to v3.x ([PR](/blog/astro3_0))
 
 0.9.11: Update Astro to v2.5.6
 
