@@ -1,6 +1,6 @@
 {
     "name": "tinyrocket",
-    "version": "0.9.13",
+    "version": "0.9.14",
     "private": true,
     "scripts": {
         "dev": "astro dev",
@@ -9,11 +9,11 @@
         "preview": "astro preview"
     },
     "devDependencies": {
-        "@astrojs/mdx": "^1.0.0",
+        "@astrojs/mdx": "^1.1.0",
         "@astrojs/preact": "^3.0.0",
         "@astrojs/sitemap": "^3.0.0",
         "@astrojs/tailwind": "^5.0.0",
-        "astro": "^3.0.10",
+        "astro": "^3.1.0",
         "postcss": "^8.4.29"
     },
     "dependencies": {
