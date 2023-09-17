@@ -12,6 +12,7 @@ A starter theme for Astro.
 - ✅ Search capability using lightweight client-side JS
 - ✅ RSS feed (rss.xml) generation
 - ✅ Web map / geolocation
+- ✅ [View transitions](https://docs.astro.build/en/guides/view-transitions/)
 
 Refer to [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc).
 
@@ -31,15 +32,16 @@ Below is an overview.
 │   ├── layouts/
 │   └── pages/
 │       └── index.astro
-│       └── doc.astro
+│       └── doc.mdx
 │       └── search.astro
 │       └── map.astro
+│       └── 404.astro
 │       └── about.mdx
 │       └── privacy.mdx
 │       └── rss.xml.ts
 │       └── blog/
 │           └── [...page].astro
-│           └── few_sample_posts.md
+│           └── few_sample_posts.mdx
 └── astro.config.mjs
 ```
 
@@ -49,6 +51,6 @@ Any static assets, like images, are placed in the `public/` directory.
 
 ## 👀 Want to learn more?
 
-- [Astro documentation](https://github.com/withastro/astro)
+- [Astro documentation](https://docs.astro.build/en/getting-started/)
 
 - [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc)
