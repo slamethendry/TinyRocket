@@ -28,3 +28,5 @@
     font-weight: normal;
     font-style: normal;
 }
+
+::selection {background-color: #FFF2CA}
