@@ -14,7 +14,7 @@
         "@astrojs/sitemap": "^3.0.0",
         "@astrojs/tailwind": "^5.0.0",
         "astro": "^3.3.0",
-        "postcss": "^8.4.29"
+        "postcss": "^8.4.31"
     },
     "dependencies": {
         "@astrojs/rss": "^3.0.0",
