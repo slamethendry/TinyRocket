@@ -1,5 +1,5 @@
 ---
-author: Matias Delgado
+author: John Doe
 pubDatetime: 2022-06-23T04:58:53Z
 title: Example Blog 2
 slug: example-blog-2
