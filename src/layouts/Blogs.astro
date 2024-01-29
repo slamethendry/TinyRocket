@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BlogHeader from "../components/BlogHeader.astro";
+import BlogPostPreview from "../components/BlogPostPreview.astro";
+import Page from "../components/Page.astro";
+import Pagination from "../components/Pagination.astro";
+
+export interface Props {
+  currentPage: number;
+  totalPages: number;
+  paginatedPosts: CollectionEntry<"blog">[];
+}
+
+const { currentPage, totalPages, paginatedPosts } = Astro.props;
+---
+
+<Page title="Title" description="Description">
+  <BlogHeader title="Blogs" />
+  <div class="flex justify-center">
+    <div class="text-lg w-5/6 lg:w-3/4">
+      <aside data-pagefind-ignore>
+        {
+          paginatedPosts.map((post) => {
+            return <BlogPostPreview post={post} />;
+          })
+        }
+      </aside>
+    </div>
+  </div>
+
+  <Pagination
+    {currentPage}
+    {totalPages}
+    prevUrl={`/blog${currentPage - 1 !== 1 ? "/" + (currentPage - 1) : ""}`}
+    nextUrl={`/blog/${currentPage + 1}`}
+  />
+</Page>

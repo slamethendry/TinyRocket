@@ -8,34 +8,17 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, heroImage, alt } = post.data;
+const { title, description, ogImage, pubDateTime } = post.data;
 const { Content } = await post.render();
 ---
 
 <Page {title} {description}>
-  <BlogHeader title="My Blog" />
-
-  {
-    heroImage && (
-      <div>
-        <img class="w-full" loading="eager" src={heroImage} alt={alt} />
-      </div>
-    )
-  }
+  <BlogHeader title={title} />
 
   <div class="flex justify-center text-zinc-700">
     <div class="text-lg w-5/6 lg:w-3/4 prose">
       <h1 class="text-2xl font-semibold mt-8">{title}</h1>
-      <p class="font-extralight mb-8">{pubDate}</p>
-
-      <div>
-        <p class="text-lg my-6">
-          {description}
-        </p>
-      </div>
-      <div class="prose text-lg">
-        <slot />
-      </div>
+      <Content />
     </div>
   </div>
 </Page>
