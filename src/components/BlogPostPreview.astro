@@ -1,23 +1,37 @@
 ---
+import type { CollectionEntry } from "astro:content";
+
 export interface Props {
-    post: any;
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
+const { slug } = post;
+
+const {
+  title,
+  author,
+  description,
+  ogImage,
+  canonicalURL,
+  pubDatetime,
+  modDatetime,
+  tags,
+} = post.data;
 ---
 
 <div class="my-8 flex justify-between">
-    <div>
-        <a class="underline underline-offset-2" href={post.url}>
-            <h1 class="font-semibold">{post.frontmatter.title}</h1>
-        </a>
-        <h2 class="font-light">{post.frontmatter.description}</h2>
-        <a
-            class="italic font-semibold text-sm text-zinc-600 underline underline-offset-2"
-            href={post.url}>Read more</a
-        >
-    </div>
-    <div class="font-extralight">
-        {post.frontmatter.pubDate}
-    </div>
+  <div>
+    <a class="underline underline-offset-2" href={`/blog/${slug}`}>
+      <h1 class="font-semibold">{title}</h1>
+    </a>
+    <h2 class="font-light">{description}</h2>
+    <a
+      class="italic font-semibold text-sm text-zinc-600 underline underline-offset-2"
+      href={`/blog/${slug}`}>Read more</a
+    >
+  </div>
+  <div class="font-extralight">
+    {pubDatetime}
+  </div>
 </div>

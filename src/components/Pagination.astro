@@ -1,0 +1,48 @@
+---
+import LinkButton from "./LinkButton.astro";
+
+export interface Props {
+  currentPage: number;
+  totalPages: number;
+  prevUrl: string;
+  nextUrl: string;
+}
+
+const { currentPage, totalPages, prevUrl, nextUrl } = Astro.props;
+
+const prev = currentPage > 1 ? "" : "disabled";
+const next = currentPage < totalPages ? "" : "disabled";
+---
+
+{
+  totalPages > 1 && (
+    <nav
+      class="pagination-wrapper justify-end w-3/4 mx-auto"
+      aria-label="Pagination"
+    >
+      <LinkButton
+        disabled={prev === "disabled"}
+        href={prevUrl}
+        className={`mr-4 select-none ${prev}`}
+        ariaLabel="Previous"
+      >
+        Newer
+      </LinkButton>
+      {currentPage} / {totalPages}
+      <LinkButton
+        disabled={next === "disabled"}
+        href={nextUrl}
+        className={`ml-4 select-none ${next}`}
+        ariaLabel="Next"
+      >
+        Older
+      </LinkButton>
+    </nav>
+  )
+}
+
+<style>
+  .pagination-wrapper {
+    @apply mb-8 mt-auto flex;
+  }
+</style>
