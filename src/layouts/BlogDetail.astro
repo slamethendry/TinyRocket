@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import BackToTop from "../components/BackToTop.astro";
 import BlogHeader from "../components/BlogHeader.astro";
 import Page from "../components/Page.astro";
 
@@ -13,6 +14,7 @@ const { Content } = await post.render();
 ---
 
 <Page {title} {description}>
+  <BackToTop />
   <BlogHeader title={title} />
 
   <div class="flex justify-center text-zinc-700">
