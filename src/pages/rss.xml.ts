@@ -1,7 +1,5 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { SITE } from "../config";
 import getSortedPosts from "../utils/getSortedPosts";
 
 export async function GET(context) {
@@ -12,12 +10,6 @@ export async function GET() {
     title: 'Tiny Rocket',
     description: 'A humble Astronaut’s guide to the stars',
     site: context.site,
-    items: await pagesGlobToRssItems(
-      import.meta.glob('./blog/*.{md,mdx}'),
-    ),
-    title: SITE.title,
-    description: SITE.description,
-    site: SITE.website,
     items: sortedPosts.map(({ data, slug }) => ({
       link: `posts/${slug}`,
       title: data.title,
