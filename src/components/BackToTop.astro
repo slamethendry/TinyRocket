@@ -1,0 +1,46 @@
+<script>
+  let button = createButton();
+
+  function createButton() {
+    const buttonBackToTop = document.createElement("button");
+    buttonBackToTop.classList.add("backToTop");
+    buttonBackToTop.innerHTML = `
+      <div class="backToTopImgWrap">
+        <img src="/assets/images/up.png" alt="" class="backFirstImg" />
+        <img src="/assets/images/up.png" alt="" class="backLastImg" />
+      </div>
+    `;
+    document.body.appendChild(buttonBackToTop);
+    return buttonBackToTop;
+  }
+
+  function toggleBackToTopButton() {
+    if (window.scrollY >= 150) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  }
+
+  // Those event listeners are added to the button when it's created, and it's run only once per page load
+  window.addEventListener("scroll", toggleBackToTopButton);
+  button.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+  // Also, this run when the page is swapped!
+  document.addEventListener("astro:after-swap", () => {
+    button = createButton();
+    toggleBackToTopButton()
+    button.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  })
+</script>
+
