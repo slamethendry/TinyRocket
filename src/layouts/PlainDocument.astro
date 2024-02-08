@@ -1,4 +1,5 @@
 ---
+import BackToTop from "../components/BackToTop.astro";
 import Page from "../components/Page.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
@@ -8,6 +9,7 @@ const displayVersion = version ? "Version " + version : "";
 ---
 
 <Page {title} {description}>
+    <BackToTop />
     <SiteHeader />
     <div class="flex justify-center text-zinc-700">
         <div class="text-lg w-5/6 lg:w-3/4 prose">

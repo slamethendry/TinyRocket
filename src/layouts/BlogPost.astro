@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import BackToTop from "../components/BackToTop.astro";
 import BlogHeader from "../components/BlogHeader.astro";
 import Page from "../components/Page.astro";
 
@@ -24,6 +25,7 @@ const { Content } = await post.render();
   }
 
   <div class="flex justify-center text-zinc-700">
+    <BackToTop />
     <div class="text-lg w-5/6 lg:w-3/4 prose">
       <h1 class="text-2xl font-semibold mt-8">{title}</h1>
       <p class="font-extralight mb-8">{pubDate}</p>

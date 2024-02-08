@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import BackToTop from "../components/BackToTop.astro";
 import BlogHeader from "../components/BlogHeader.astro";
 import BlogPostPreview from "../components/BlogPostPreview.astro";
 import Page from "../components/Page.astro";
@@ -16,6 +17,7 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
 
 <Page title="Title" description="Description">
   <BlogHeader title="Blogs" />
+  <BackToTop />
   <div class="flex justify-center">
     <div class="text-lg w-5/6 lg:w-3/4">
       <aside data-pagefind-ignore>
