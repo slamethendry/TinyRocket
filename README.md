@@ -6,6 +6,7 @@ A starter theme for Astro.
 
 - ✅ Designed for company website and blog
 - ✅ Simple enough for personal website and/or blog
+- ✅ Content collections
 - ✅ Markdown support (.mdx)
 - ✅ Sitemap.xml generation
 - ✅ Style is highly customisable with Tailwind CSS
@@ -30,6 +31,10 @@ Below is an overview.
 ├── src/
 │   ├── components/
 │   ├── layouts/
+|   ├── content
+|      └── blog/
+│           └── [...page].astro
+│           └── few_sample_posts.mdx
 │   └── pages/
 │       └── index.astro
 │       └── doc.mdx
@@ -39,9 +44,7 @@ Below is an overview.
 │       └── about.mdx
 │       └── privacy.mdx
 │       └── rss.xml.ts
-│       └── blog/
-│           └── [...page].astro
-│           └── few_sample_posts.mdx
+│       
 └── astro.config.mjs
 ```
 
