@@ -9,12 +9,12 @@ A starter theme for Astro.
 - ✅ Markdown support (.mdx)
 - ✅ Sitemap.xml generation
 - ✅ Style is highly customisable with Tailwind CSS
-- ✅ Search capability using lightweight client-side JS
+- ✅ Search capability using lightweight client-side JS (pagefind.app)
 - ✅ RSS feed (rss.xml) generation
 - ✅ Web map / geolocation
 - ✅ [View transitions](https://docs.astro.build/en/guides/view-transitions/)
+- ✅ JS is only needed for search and map; Tiny Rocket was designed around my use case and I had a need to minimise JS dependency on the client
 
-Refer to [Tiny Rocket Documentation](https://tinyrocket.pages.dev/doc).
 
 ## 🚀 Project Structure
 
@@ -23,31 +23,26 @@ Below is an overview.
 ```bash
 /
 ├── public/
-│   ├── assets
 │   ├── _leaflet
+│   ├── assets
 │   ├── robots.txt
 │   └── favicon.ico
 ├── src/
 │   ├── components/
+│   ├── contents/
 │   ├── layouts/
 │   └── pages/
-│       └── index.astro
-│       └── doc.mdx
-│       └── search.astro
-│       └── map.astro
+│       └── blog/
 │       └── 404.astro
 │       └── about.mdx
+│       └── doc.mdx
+│       └── index.astro
+│       └── map.astro
 │       └── privacy.mdx
 │       └── rss.xml.ts
-│       └── blog/
-│           └── [...page].astro
-│           └── few_sample_posts.mdx
+│       └── search.astro
 └── astro.config.mjs
 ```
-
-Astro looks for `.astro` or `.mdx` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-Any static assets, like images, are placed in the `public/` directory.
 
 ## 👀 Want to learn more?
 

@@ -37,7 +37,7 @@ Navigation can be accessed and changed via `components/SiteHeader.astro`.
 
 #### Copyright
 
-If your project needs a copyright notice, it is set in `src/components/Footer.astro` and if you do not need it, just remove it from the footer. 
+If your project needs a copyright notice, it is set in `src/components/Footer.astro` and if you do not need it, just remove it from the footer.
 
 
 #### Pagination
@@ -69,7 +69,7 @@ Please check [Astro deployment guide](https://docs.astro.build/en/guides/deploy/
 
 Search uses [pagefind](https://github.com/CloudCannon/pagefind) (MIT License) and is shipped by default, but NOT turned on. If you do not want search, just delete it from the template as you customise your site.
 
-If you want to turn it on, you need to add pagefind's indexing step (`npx pagefind --source dist`) after the build step on your deployment platform. For example:  
+If you want to turn it on, you need to add pagefind's indexing step (`npx pagefind --source dist`) after the build step on your deployment platform. For example:
 `npm run build; npx pagefind --source dist`
 
 
@@ -102,7 +102,7 @@ To display a map, you need to have a map tile provider. Please consult [this OSM
 
 Sometimes you want your font to not be too bland, so you pick something nice, but not all operating systems support the particular web font by default. You can use Google Font (or other provider) with all the privacy implications. Alternatively, you can self-host.
 
-Tiny Rocket comes with font self-hosting example. You are encouraged to change it with whatever font fancy your style. 
+Tiny Rocket comes with font self-hosting example. You are encouraged to change it with whatever font fancy your style.
 
 Tiny Rocket's _example_ implementation uses "Junction", an open source font from [the League of Movable Type](https://www.theleagueofmoveabletype.com) (Open Font License). The font files are placed in `public/assets/font/`. The font definitions are in `public/main.css` and in `tailwind.config.cjs`. In this particular example, the font is called from `src/components/Page.astro` as `class="font-junction"`. In your implementation, you can call it whatever fits your needs.
 
@@ -111,42 +111,21 @@ Tiny Rocket's _example_ implementation uses "Junction", an open source font from
 
 ### Thanks
 
-Thank you [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/astro/) for hosting this Tiny Rocket example site, [Andy Hermawan](https://unsplash.com/@kolamdigital) for the Unsplash images, [LoremIpsum.io](https://loremipsum.io/), and the open source communities of [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), [pagefind](https://pagefind.app/), [LeafletJS](https://leafletjs.com/), and [The League of Movable Type](https://www.theleagueofmoveabletype.com/).
+Thank you [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/astro/) for hosting this Tiny Rocket example site, [Andy Hermawan](https://unsplash.com/@kolamdigital) for the Unsplash images, and the open source communities of [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/), [pagefind](https://pagefind.app/), [LeafletJS](https://leafletjs.com/), and [The League of Movable Type](https://www.theleagueofmoveabletype.com/).
 
-Thank you [diomed](https://github.com/diomed), [fountainpen](https://github.com/fountainpen), and [Abdulrazzaq Alhendi](https://github.com/aalhendi) for the PRs.
+Thank you for the PRs:
+- [diomed](https://github.com/diomed)
+- [Delgado Matias](https://github.com/delgadomatias)
+- [Ryan Mitchell](https://github.com/newtmitch)
+- [fountainpen](https://github.com/fountainpen)
+- [Abdulrazzaq Alhendi](https://github.com/aalhendi)
 
 ---
 
 
 ### Versions
 
-0.9.14: Update packages (PR)
-
-0.9.12, 0.9.13: Update Astro to v3.x ([PR](/blog/astro3_0))
-
-0.9.11: Update Astro to v2.5.6
-
-0.9.10: Update Astro to v2.0.13 and remove not-needed Pagefind files
-
-0.9.9: Update Astro to v1.9.2
-
-0.9.8: Add self-hosted font.
-
-0.9.7: Update Astro to v1.2 and fix doc.
-
-0.9.6: Add web map and update Astro to v1.1.
-
-0.9.5: Update Astro to v1.0
-
-0.9.4: Add RSS feed and update Astro to RC.7; breaking change: rename frontmatter publishDate to pubDate
-
-0.9.3: Switch Markdown to MDX and update Astro to RC.3
-
-0.9.2: Update Astro to 1.0.0-RC.1 ( see breaking changes ) and update pagefind to 0.5.0
-
-0.9.1: Add search (pagefind)
-
-0.9.0: Initial release
+Tiny Rocket uses semantic versioning. It uses rolling version numbering if and when there is an update and will remain in the 0.9.xx range for the foreseeable future.
 
 
 #### History
