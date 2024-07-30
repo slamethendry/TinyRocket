@@ -137,7 +137,7 @@ packages:
   /@astrojs/rss@4.0.4:
     resolution: {integrity: sha512-VmHmRoC62j9iR0ez2Qumpn4LTQ9/4txOmGwGBmCSI+PzSFJI5M/qdao656oT9Logjh7CDwcPrCGQEEEi3HF75A==}
     dependencies:
-      fast-xml-parser: 4.3.3
+      fast-xml-parser: 4.4.1
       kleur: 4.1.5
     dev: false
 
@@ -1801,7 +1801,7 @@ packages:
       merge2: 1.4.1
       micromatch: 4.0.5
 
-  /fast-xml-parser@4.3.3:
+  /fast-xml-parser@4.4.1:
     resolution: {integrity: sha512-coV/D1MhrShMvU6D0I+VAK3umz6hUaxxhL0yp/9RjfiYUfAv14rDhGQL+PLForhMdr0wq3PiV07WtkkNjJjNHg==}
     hasBin: true
     dependencies:
