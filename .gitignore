@@ -19,6 +19,7 @@ pnpm-debug.log*
 
 # personal preference
 package-lock.json
+bun.lockb
 
 # Starting with Astro 2.0, Astro generates .astro directories for "content
 # collections", which the doc advised to ignore
