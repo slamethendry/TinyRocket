@@ -12,14 +12,14 @@
         "@astrojs/mdx": "^2.3.1",
         "@astrojs/preact": "^3.5.3",
         "@astrojs/sitemap": "^3.1.6",
-        "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.15.4",
-        "postcss": "^8.4.45"
+        "@astrojs/tailwind": "^5.1.1",
+        "astro": "^4.15.9",
+        "postcss": "^8.4.47"
     },
     "dependencies": {
         "@astrojs/rss": "^4.0.7",
         "@tailwindcss/typography": "^0.5.15",
-        "preact": "^10.23.2",
-        "tailwindcss": "^3.4.10"
+        "preact": "^10.24.1",
+        "tailwindcss": "^3.4.13"
     }
 }
