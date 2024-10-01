@@ -3656,7 +3656,7 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  /rollup@4.9.6:
+  /rollup@4.22.4:
     resolution: {integrity: sha512-05lzkCS2uASX0CiLFybYfVkwNbKZG5NFQ6Go0VWyogFTXXbR039UVsegViTntkk4OglHBdF54ccApXRRuXRbsg==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
@@ -4293,7 +4293,7 @@ packages:
     dependencies:
       esbuild: 0.19.12
       postcss: 8.4.33
-      rollup: 4.9.6
+      rollup: 4.22.4
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
