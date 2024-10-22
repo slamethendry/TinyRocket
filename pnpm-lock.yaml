@@ -1111,7 +1111,7 @@ packages:
       ci-info: 4.0.0
       clsx: 2.1.0
       common-ancestor-path: 1.0.1
-      cookie: 0.6.0
+      cookie: 0.7.0
       cssesc: 3.0.0
       debug: 4.3.4
       deterministic-object-hash: 2.0.2
@@ -1457,7 +1457,7 @@ packages:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: true
 
-  /cookie@0.6.0:
+  /cookie@0.7.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
     dev: true
